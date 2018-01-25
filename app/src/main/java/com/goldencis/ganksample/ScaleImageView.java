@@ -16,6 +16,8 @@ public class ScaleImageView extends android.support.v7.widget.AppCompatImageView
      * 宽高比(宽/高)
      */
     private static final int SCALE = 2;
+    private static final int DEFAULT_WIDTH = 150;
+
 
     public ScaleImageView(Context context) {
         super(context);

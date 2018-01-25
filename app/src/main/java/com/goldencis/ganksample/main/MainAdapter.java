@@ -44,7 +44,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
         WealEntity.ResultsBean bean = mData.get(position);
         String url = bean.getUrl();
         Log.d(TAG, "onBindViewHolder: -->" + url);
-        Glide.with(mContext).load(url).into(holder.mImageView);
+        Glide.with(mContext).load(url).placeholder(R.mipmap.ic_launcher_round).into(holder.mImageView);
     }
 
     @Override

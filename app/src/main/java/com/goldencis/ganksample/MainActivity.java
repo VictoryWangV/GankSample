@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2, GridLayoutManager.VERTICAL, false);
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-        mRecyclerView.setLayoutManager(staggeredGridLayoutManager);
+        mRecyclerView.setLayoutManager(linearLayoutManager);
         mAdapter = new MainAdapter(this);
         mRecyclerView.setAdapter(mAdapter);
     }
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void loadData() {
         WealService wealService = Api.getWealService();
-        Call<WealEntity> call = wealService.getData(10, 1);
+        Call<WealEntity> call = wealService.getData(20, 1);
         call.enqueue(new Callback<WealEntity>() {
             @Override
             public void onResponse(Call<WealEntity> call, Response<WealEntity> response) {
